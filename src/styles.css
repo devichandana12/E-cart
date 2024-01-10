@@ -1,1 +1,126 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.navbar {
+    padding: 5px;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgb(222, 222, 222);
+
+}
+
+.logo {
+
+    width: 220px;
+    margin-left: -10rem;
+
+}
+
+.fa-regular {
+    font-size: 40px;
+    color: rgb(14, 21, 39);
+}
+
+.title {
+    font-family: 'Salsa', cursive;
+    font-size: 25px;
+}
+
+.sub-title {
+    font-size: 22px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: hsl(50, 86%, 43%);
+    ;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin-left: 3rem;
+}
+
+ul>li {
+
+    cursor: pointer;
+    padding: 1rem;
+    font-size: 18px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.product-sec .heading {
+    background-color: rgb(218, 219, 220);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    font-size: 22px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    box-shadow: 0px 2px 2px rgb(187, 187, 187);
+
+}
+
+
+.product-div {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+
+
+}
+
+
+.card {
+    width: 280px;
+    height: 350px;
+   
+   
+}
+
+.card :hover {
+   
+    box-shadow: 0 8px 8px 8px rgba(119, 119, 119, 0.2), 0 8px 8px #73737324, 0 8px 8px #a4a4a4
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.dropdown {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+
+
+}
+
+.form-select {
+    width: 150px;
+    margin-right: 10px;
+
+
+}
+
+.fil-title {
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+
