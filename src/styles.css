@@ -93,8 +93,9 @@ ul>li {
 }
 
 .card :hover {
-   
-    box-shadow: 0 8px 8px 8px rgba(119, 119, 119, 0.2), 0 8px 8px #73737324, 0 8px 8px #a4a4a4
+   /* padding: 10px; */
+    /* box-shadow: 0 8px 8px 8px rgba(119, 119, 119, 0.2), 0 8px 8px #73737324, 0 8px 8px #a4a4a4 */
+    box-shadow: 0 8px 8px 8px #0003,0 8px 8px #00000024,0 8px 8px #0000001f;
 }
 
 .card img {
@@ -121,6 +122,29 @@ ul>li {
 .fil-title {
     margin-top: 5px;
     margin-right: 10px;
+    font-weight: 500;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+
+
+/* media query */
+
+
+
+@media (max-width: 770px)
+{
+    .product-list {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+
+@media (max-width: 570px){
+    .product-list {
+        grid-template-columns: repeat(1,1fr);
+    }
 }
 
 
