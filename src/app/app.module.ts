@@ -8,6 +8,12 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { HomeComponent } from './components/home/home.component';
 import { ProductViewComponent } from './components/product-view/product-view.component';
 import { LoginComponent } from './components/login/login.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { HttpClientModule } from '@angular/common/http';
+import { ProductServiceService } from './Service/product-service.service';
+
+
+
 
 @NgModule({
   declarations: [
@@ -20,9 +26,11 @@ import { LoginComponent } from './components/login/login.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    NgxPaginationModule
   ],
-  providers: [],
+  providers: [ProductServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

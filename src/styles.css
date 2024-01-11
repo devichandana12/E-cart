@@ -79,7 +79,7 @@ ul>li {
 .product-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
+    gap: 5rem;
 
 
 }
@@ -93,8 +93,7 @@ ul>li {
 }
 
 .card :hover {
-   /* padding: 10px; */
-    /* box-shadow: 0 8px 8px 8px rgba(119, 119, 119, 0.2), 0 8px 8px #73737324, 0 8px 8px #a4a4a4 */
+    padding: 10px;
     box-shadow: 0 8px 8px 8px #0003,0 8px 8px #00000024,0 8px 8px #0000001f;
 }
 
