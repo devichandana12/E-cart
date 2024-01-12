@@ -9,27 +9,53 @@ import { ProductServiceService } from 'src/app/Service/product-service.service';
 export class ProductListComponent implements OnInit {
 
   p: number = 1;
-  productArray:any;
+  productArray: any;
+  categoryName: any;
   
 
-  constructor(private service:ProductServiceService) {}
+  selectedCategory: string = ''; 
+  categoryId: string = ''; 
+
+
+
+  constructor(private service: ProductServiceService) { }
 
   ngOnInit(): void {
     this.getProduct()
+    this.getCategory()
     
   }
 
 
-  getProduct(){
-    this.service.getData().subscribe((data) => {
-      this.productArray = data;
-      console.log(this.productArray);
-      
+  getProduct() {
+    this.service.getData().subscribe((res:any) => {
+      this.productArray = res.data;
+      console.log("full data is:", this.productArray);
+
     })
   }
 
 
+  getCategory() {
+    this.service.getCategoryData().subscribe((response:any) => {
+      
+      this.categoryName = response.data;
+      console.log("category data:", this.categoryName);
+    });
+  }
+ 
+ 
+  filterImages(){
+  //   if(this.selectedCategory==='ALL'){
+  //     this.categoryId='';
+  //   }
+  //   else{
+  //     this.categoryId=this.selectedCategory
+  //   }
+  //   this.service.getCategoryId(this.categoryId).subscribe((response:any)=>{
+  //     this.productArray=response.data
 
-
+  //   })
+  }
 
 }

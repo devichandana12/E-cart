@@ -1,7 +1,7 @@
 <div class="product-page">
   <div class="product-sec">
     <div class="heading">
-       Product
+      Product
     </div>
 
 
@@ -9,25 +9,18 @@
       <div class="dropdown">
 
         <span class="fil-title">Filter By:</span>
-        <select class="form-select " aria-label="Default select example">
-
-          <option selected value="1">ALL</option>
-          <option value="2">1</option>
-          <option value="3">2</option>
-          <option value="4">3</option>
-          <option value="5">4</option>
-          <option value="6">5</option>
-          
+        <select class="form-select" aria-label="Default select example">
+          <option selected>ALL</option>
+          <option *ngFor="let item of categoryName">{{ item.category_name }}</option>
         </select>
-
-        <button class="btn btn-dark">Search</button>
+        <button class="btn btn-dark" type="submit" (click)="filterImages()">Search</button>
 
       </div>
     </div>
 
     <div class="product-div">
       <div class="product-list">
-        <div  *ngFor="let data of productArray?.data| paginate: { itemsPerPage: 21, currentPage: p }">
+        <div *ngFor="let data of productArray | paginate: { itemsPerPage: 21, currentPage: p }">
           <div class="card">
             <img [src]="data.image_url" alt="card image">
           </div>
@@ -41,7 +34,7 @@
 
   <ul class="pagination justify-content-end mt-5">
     <pagination-controls (pageChange)="p = $event"></pagination-controls>
-    
+
   </ul>
 
 </div>

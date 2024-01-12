@@ -11,6 +11,8 @@ import { LoginComponent } from './components/login/login.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductServiceService } from './Service/product-service.service';
+import { FormsModule } from '@angular/forms';
+
 
 
 
@@ -28,7 +30,8 @@ import { ProductServiceService } from './Service/product-service.service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    FormsModule
   ],
   providers: [ProductServiceService],
   bootstrap: [AppComponent]
