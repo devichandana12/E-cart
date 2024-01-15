@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductServiceService } from 'src/app/Service/product-service.service';
 
+
+
+
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
@@ -11,10 +14,12 @@ export class ProductListComponent implements OnInit {
   p: number = 1;
   productArray: any;
   categoryName: any;
-  
 
-  selectedCategory: string = ''; 
-  categoryId: string = ''; 
+
+  selectedCategoryId: string = 'ALL';
+  categoryId: string = '';
+
+  filteredProduct: any[] = [];
 
 
 
@@ -23,39 +28,50 @@ export class ProductListComponent implements OnInit {
   ngOnInit(): void {
     this.getProduct()
     this.getCategory()
-    
+
   }
 
 
   getProduct() {
-    this.service.getData().subscribe((res:any) => {
+    this.service.getData().subscribe((res: any) => {
       this.productArray = res.data;
-      console.log("full data is:", this.productArray);
-
-    })
+      this.filteredProduct = this.productArray; // Initialize with all products
+    });
   }
 
 
   getCategory() {
-    this.service.getCategoryData().subscribe((response:any) => {
-      
+    this.service.getCategoryData().subscribe((response: any) => {
+
       this.categoryName = response.data;
       console.log("category data:", this.categoryName);
     });
   }
- 
- 
-  filterImages(){
-  //   if(this.selectedCategory==='ALL'){
-  //     this.categoryId='';
-  //   }
-  //   else{
-  //     this.categoryId=this.selectedCategory
-  //   }
-  //   this.service.getCategoryId(this.categoryId).subscribe((response:any)=>{
-  //     this.productArray=response.data
 
-  //   })
+
+
+
+
+  FilterCategoryId(categoryId: string) {
+
+    if (categoryId === 'ALL') { 
+      this.filteredProduct = this.productArray; 
+    }
+    else {
+      this.service.getCategoryId(categoryId).subscribe((resp: any) => {
+        this.selectedCategoryId = resp.data;
+        console.log(this.selectedCategoryId);
+        this.filteredProduct = resp.data
+
+
+
+      });
+    }
   }
+
+
+
+
+
 
 }

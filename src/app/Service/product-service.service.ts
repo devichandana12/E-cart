@@ -28,10 +28,18 @@ export class ProductServiceService {
   }
 
 
-  // getCategoryId(categoryId:string){
-  //   let url=`${this.BASE_URL}/viewProducts?product_name=&category_id=${categoryId}`
-  //   return this.http.get<any[]>(url)
-  // }
+  
+
+
+  getCategoryId(categoryId:string){
+
+    let url=`${this.BASE_URL}/viewProducts/?category_id=${categoryId}`
+    return this.http.get<any[]>(url)
+
+  }
+
+
+  
 
  
 

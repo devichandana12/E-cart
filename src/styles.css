@@ -5,21 +5,12 @@
 }
 
 
-.navbar {
-    padding: 5px;
-    width: 100%;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-bottom: 1px solid rgb(222, 222, 222);
 
-}
 
 .logo {
 
     width: 220px;
-    margin-left: -10rem;
+    margin-left: 20rem;
 
 }
 
@@ -40,22 +31,18 @@
     ;
 }
 
-ul {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    list-style: none;
-    margin-left: 3rem;
-}
 
-ul>li {
 
-    cursor: pointer;
-    padding: 1rem;
-    font-size: 18px;
+
+.nav-link {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
+    font-weight: 400;
+    color: black;
+    font-size: 18px;
+    
 
+
+}
 
 
 
@@ -92,13 +79,13 @@ ul>li {
 .card {
     width: 280px;
     height: 350px;
-   
-   
+
+
 }
 
 .card :hover {
     padding: 10px;
-    box-shadow: 0 8px 8px 8px #0003,0 8px 8px #00000024,0 8px 8px #0000001f;
+    box-shadow: 0 8px 8px 8px #0003, 0 8px 8px #00000024, 0 8px 8px #0000001f;
 }
 
 .card img {
@@ -136,18 +123,24 @@ ul>li {
 
 
 
-@media (max-width: 770px)
-{
+@media (max-width: 770px) {
     .product-list {
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 
-@media (max-width: 570px){
+@media (max-width: 570px) {
     .product-list {
-        grid-template-columns: repeat(1,1fr);
+        grid-template-columns: repeat(1, 1fr);
     }
+    .logo{
+        margin-left: 1rem;
+    }
+
+    .dropdown{
+        margin-top: 1rem;
+        padding: 0;
+    }
+  
 }
-
-

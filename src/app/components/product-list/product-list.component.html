@@ -9,18 +9,19 @@
       <div class="dropdown">
 
         <span class="fil-title">Filter By:</span>
-        <select class="form-select" aria-label="Default select example">
-          <option selected>ALL</option>
-          <option *ngFor="let item of categoryName">{{ item.category_name }}</option>
+        <select class="form-select" aria-label="Default select example" [(ngModel)]="selectedCategoryId">
+          <option selected value="ALL">ALL</option>
+          <option *ngFor="let item of categoryName" [value]="item._id">{{ item.category_name }}</option>
         </select>
-        <button class="btn btn-dark" type="submit" (click)="filterImages()">Search</button>
+        <button class="btn btn-dark" type="submit" (click)="FilterCategoryId(selectedCategoryId)">Search</button>
+        
 
       </div>
     </div>
 
     <div class="product-div">
       <div class="product-list">
-        <div *ngFor="let data of productArray | paginate: { itemsPerPage: 21, currentPage: p }">
+        <div *ngFor="let data of filteredProduct | paginate: { itemsPerPage: 21, currentPage: p }">
           <div class="card">
             <img [src]="data.image_url" alt="card image">
           </div>

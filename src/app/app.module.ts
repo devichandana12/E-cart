@@ -13,6 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductServiceService } from './Service/product-service.service';
 import { FormsModule } from '@angular/forms';
 
+import { SelectDropDownModule } from 'ngx-select-dropdown'
+
 
 
 
@@ -31,7 +33,8 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     NgxPaginationModule,
-    FormsModule
+    FormsModule,
+    SelectDropDownModule
   ],
   providers: [ProductServiceService],
   bootstrap: [AppComponent]
